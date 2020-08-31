@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head>
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/t-alphabet-1-866380.png">
+    <title> TEDIT </title>
+    <script src="p5.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="p5.sound.min.js"></script>
+<script src="./p5.play.js"></script>
+<script src="p5.js-speech/lib/p5.speech.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <select id="case" title="Font-Preferances">
+        <option value="none">None</option>
+        <option value="uppercase">Upper Case</option>
+        <option value="lowercase">Lower case</option>
+        <option value="capitalize">Capitalize</option>
+      </select>
+      <script src="sketch.js"></script>
+      <textarea id="document" cols="100" rows="50" autofocus></textarea>
+      <select id="symbol">
+          <option value="1">Add</option>
+          <option value="2">Subtract</option>
+          <option value="3">Divide</option>
+          <option value="4">Multiply</option>
+        <script src="sketch.js"></script>
+      </select>
+      <select id="voices" title="Speech Voices">
+  <optgroup label="Voices for Microsoft Edge">
+  <option value="Microsoft David - English (United States)">Microsoft David - English (United States)</option>
+  <option value="Microsoft Ravi - English (India)">Microsoft Ravi - English (India)</option>
+  <option value="Microsoft Heera - English (India)">Microsoft Heera - English (India)</option>
+  <option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States)</option>
+  <option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States)</option>
+  <option value="Microsoft Katja Online (Natural) - German (Germany)">Microsoft Katja Online (Natural) - German (Germany)</option>
+  <option value="Microsoft Natasha Online (Natural) - English (Australia)">Microsoft Natasha Online (Natural) - English (Australia)</option>
+  <option value="Microsoft Clara Online (Natural) - English (Canada)">Microsoft Clara Online (Natural) - English (Canada)</option>
+  <option value="Microsoft Mia Online (Natural) - English (United Kingdom)">Microsoft Mia Online (Natural) - English (United Kingdom)</option>
+  <option value="Microsoft Neerja Online (Natural) - English (India)">Microsoft Neerja Online (Natural) - English (India)</option>
+  <option value="Microsoft Aria Online (Natural) - English (United States)">Microsoft Aria Online (Natural) - English (United States)</option>
+  <option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States)</option>
+  <option value="Microsoft Guy Online (Natural) - English (United States)">Microsoft Guy Online (Natural) - English (United States)</option>
+  <option value="Microsoft Elvira Online (Natural) - Spanish (Spain)">Microsoft Elvira Online (Natural) - Spanish (Spain)</option>
+  <option value="Microsoft Dalia Online (Natural) - Spanish (Mexico)">Microsoft Dalia Online (Natural) - Spanish (Mexico)</option>
+  <option value="Microsoft Sylvie Online (Natural) - French (Canada)">Microsoft Sylvie Online (Natural) - French (Canada)</option>
+  <option value="Microsoft Denise Online (Natural) - French (France)">Microsoft Denise Online (Natural) - French (France)</option>
+  <option value="Microsoft Swara Online (Natural) - Hindi (India)">Microsoft Swara Online (Natural) - Hindi (India)</option>
+  <option value="Microsoft Elsa Online (Natural) - Italian (Italy)">Microsoft Elsa Online (Natural) - Italian (Italy)</option>
+  <option value="Microsoft Nanami Online (Natural) - Japanese (Japan)">Microsoft Nanami Online (Natural) - Japanese (Japan)</option>
+  <option value="Microsoft SunHi Online (Natural) - Korean (Korea)">Microsoft SunHi Online (Natural) - Korean (Korea)</option>
+  <option value=" Microsoft Colette Online (Natural) - Dutch (Netherlands)"> Microsoft Colette Online (Natural) - Dutch (Netherlands)</option>
+  <option value="Microsoft Zofia Online (Natural) - Polish (Poland)">Microsoft Zofia Online (Natural) - Polish (Poland)</option>
+  <option value="Microsoft Francisca Online (Natural) - Portuguese (Brazil)">Microsoft Francisca Online (Natural) - Portuguese (Brazil)</option>
+  <option value="Microsoft Dariya Online (Natural) - Russian (Russia)">Microsoft Dariya Online (Natural) - Russian (Russia)</option>
+  <option value="Microsoft Emel Online (Natural) - Turkish (Turkey)">Microsoft Emel Online (Natural) - Turkish (Turkey)</option>
+  <option value="Microsoft Xiaoxiao Online (Natural) - Chinese (Mainland)">Microsoft Xiaoxiao Online (Natural) - Chinese (Mainland)</option>
+  <option value="Microsoft HiuGaai Online (Natural) - Chinese (Hong Kong)">Microsoft HiuGaai Online (Natural) - Chinese (Hong Kong)</option>
+  <option value="Microsoft HiuGaai Online (Natural) - Chinese (Hong Kong)">Microsoft HiuGaai Online (Natural) - Chinese (Hong Kong)</option>
+  <option value="Microsoft HsiaoYu Online (Natural) - Chinese (Taiwan)">Microsoft HsiaoYu Online (Natural) - Chinese (Taiwan)</option>
+  <option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States)</option>
+  <option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States)</option>
+  </optgroup>
+  <optgroup label="Voices For Google Chrome">
+  <option value="Google Deutsch">Google Deutsch</option>
+  <option value="Google US English">Google US English</option>
+  <option value="Google UK English Female">Google UK English Female</option>
+  <option value="Google UK English Male">Google UK English Male</option>
+  <option value="Google español">Google español</option>
+  <option value="Google español de Estados Unidos">Google español de Estados Unidos</option>
+  <option value="Google français">Google français</option>
+  <option value="Google हिन्दी">Google हिन्दी</option>
+  <option value="Google Bahasa Indonesia">Google Bahasa Indonesia</option>
+  <option value="Google italiano">Google italiano</option>
+  <option value="Google 日本語">Google 日本語</option>
+  <option value="Google 한국의">Google 한국의</option>
+  <option value="Google Nederlands">Google Nederlands</option>
+  <option value="Google polski">Google polski</option>
+  <option value="Google português do Brasil">Google português do Brasil</option>
+  <option value="Google русский">Google русский</option>
+  <option value="Google 普通话（中国大陆）">Google 普通话（中国大陆）</option>
+  <option value="Google 粤語（香港）">Google 粤語（香港）</option>
+  <option value="Google 國語（臺灣）">Google 國語（臺灣）</option>
+  </optgroup>
+</select>
+      <form>
+      <input id="textColor" type="color" title="Text Colour"/>
+      <input id="bgColor" type="color" value="#FFFFFF" title="Background Colour"/>
+      <input type="reset" value="Reset" id="reset" title="Reset"/>
+    </form>
+    <button id='bold' title="Bold"><b>B</b></button>
+    <button id='italic' title="Italic"><i>I</i></button>
+    <button id='q' title="Insert Question mark."><b>?</b></button>
+    <button id='i' title="Insert Exclamation mark."><b>!</b></button>
+    <button id='dot'>•</button>
+    <button id='speak' title="Speak what I've written">Speak</button>
+    <button id='stop' title="Don't close the tab, if the voice is till speaking. Press this button!">Stop Speech</button>
+    <button id='rec'>Recognize</button>
+    <button id='simA'>Simple Addition</button>
+    <button id='addB'>Add</button>
+    <a href="usage.html" title="Find out how to use this app!">Usage</a>
+    <input type="text" readonly id="countW" title="Word Count">
+    <input id="add" placeholder="Number 1" readonly>
+    <input id="add2" placeholder="Number 2">
+    <input id="font" placeholder="Font" title="Font-Type">
+    <input type="range" min="0" max="2" step="0.1" value="1" id="rate"/>
+    <input type="range" min="0" max="1" step="0.1" value="1" id="volume"/>
+    <input type="color" id="caret-color">
+</body></html>
