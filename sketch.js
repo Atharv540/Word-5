@@ -276,7 +276,7 @@ function keyPressed(event){
   if(event.ctrlKey && event.altKey){
     speech.speak(hText);
   }
-  else if(typeof hText==='number' && keyCode===18){
+  else if(isNaN(hText)===false && keyCode===18){
     add.show();
     add2.show();
     addB.show();
